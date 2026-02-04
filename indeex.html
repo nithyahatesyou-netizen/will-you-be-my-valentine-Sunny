@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? ❤️</title>
+    <style>
+        body {
+            background-color: #fff0f3;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Floating Balloons */
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            font-size: 50px;
+            animation: float 8s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-120vh) rotate(20deg); opacity: 0; }
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 { color: #ff4d6d; }
+
+        img {
+            width: 250px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 5px solid #ffb3c1;
+        }
+
+        .btn-group {
+            margin-top: 20px;
+            height: 50px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+            margin-right: 10px;
+        }
+
+        #noBtn {
+            background-color: #8a8a8a;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="balloon" style="left: 10%; animation-delay: 0s;">🎈🧸</div>
+    <div class="balloon" style="left: 20%; animation-delay: 3s;">🎈❤️</div>
+    <div class="balloon" style="left: 70%; animation-delay: 1s;">🎈🧸</div>
+    <div class="balloon" style="left: 85%; animation-delay: 5s;">🎈❤️</div>
+
+    <div class="container">
+        <h1>Will you be my Valentine? 🌹</h1>
+        
+        <img src="us.jpg" alt="Us Together">
+
+        <div class="btn-group">
+            <button id="yesBtn" class="btn" onclick="celebrate()">YES!</button>
+            <button id="noBtn" class="btn" onmouseover="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const btn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function celebrate() {
+            alert("Yay! Best Valentine's ever! I love you! ❤️🧸");
+            document.querySelector('h1').innerText = "SEE YOU ON VALENTINES! ❤️";
+        }
+    </script>
+</body>
+</html>
